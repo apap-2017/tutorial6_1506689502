@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.util.List;
 
+import com.example.model.CourseModel;
 import com.example.model.StudentModel;
 
 public interface StudentService
@@ -18,4 +19,8 @@ public interface StudentService
     void deleteStudent (String npm);
     
     void updateStudent(StudentModel student);
+    
+    List<CourseModel> selectCourses(String idCourse);
+    
+    CourseModel viewCourse(String idCourse);
 }
