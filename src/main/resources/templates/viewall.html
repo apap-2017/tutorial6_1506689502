@@ -6,11 +6,13 @@
     <body>
         <h1>All Students</h1>
         
-    	<div th:each="student,iterationStatus: ${students}">
+    	<div th:each="student,iterationStatus: ${students}" th:class="${iterationStatus.odd}?'odd'">
             <h3 th:text="'No. ' + ${iterationStatus.count}">No. 1</h3>
 	       	<h3 th:text="'NPM = ' + ${student.npm}">Student NPM</h3>
 	       	<h3 th:text="'Name = ' + ${student.name}">Student Name</h3>
 	       	<h3 th:text="'GPA = ' + ${student.gpa}">Student GPA</h3>
+	       	<h3 th:if="${student.gpa >=3.49}"> Cum Laude!</h3>
+	       	<h3 th:unless="${student.gpa >=3.49}"> Sangat Memuaskan!</h3>
 	       	<h3>Kuliah yang diambil</h3>
        			<ul th:each="course,iterationStatus: ${student.courses}">
        				<li th:text="${course.name} + '-' + ${course.credits} + 'sks'"> 
