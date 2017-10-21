@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th = "http://www.thymeleaf.org">
 	<head>
-		<title> Fragment </title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/'}">Index</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/add'}">Add Student</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/add/submit'}">Add</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/view'}">View Student by NPM</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/view/${npm}'}">View Student by NPM</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/viewall'}">View All Students</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/update/${npm}'}">Update Student</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/update/submit'}">Update</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/course/view/${id_course}'}">View Course</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/delete/${npm}'}">Delete Student</title>
 	</head>
 	
 	<body>
